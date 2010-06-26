@@ -14,14 +14,14 @@ endif
 
 "set nomousefocus
 "set linespace=2
-set guioptions+=a	" Kaoriya 版 Vim 6.1.267 の gvimrc からなくなった
 "set clipboard=unnamed
 " 何故かヘッダの行が次行に溢れてしまうので (Vim 6.0ap まで)
 "set printerheader+=\ \ 
 
-nnoremap gV "*p
-vnoremap gC "*y
-vnoremap gX "*c
+set guioptions+=a	" Kaoriya 版 Vim 6.1.267 の gvimrc からなくなった
+"nnoremap gV "*p
+"vnoremap gC "*y
+"vnoremap gX "*c
 
 if has( 'win32' )
   command! -bar Fonts set guifont=ＭＳ_ゴシック:h9:cSHIFTJIS
