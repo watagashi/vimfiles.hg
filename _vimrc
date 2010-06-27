@@ -27,12 +27,6 @@ set printoptions+=formfeed:y
 "endif
 "source $VIMRUNTIME/macros/jcode.vim
 
-" 'runtimepath' ‚ğw’è‚µ‚ÄAfiletype.vim ‚ğ“Ç‚İ’¼‚µ
-"filetype off
-let myvimfiles = expand("<sfile>:p:h") . '/vimfiles'
-"let &runtimepath= myvimfiles . ',' . &runtimepath . "," . myvimfiles .'/after'
-"filetype on
-
 if has("autocmd")
 	autocmd FileType text setlocal textwidth=78 expandtab tabstop=4 shiftwidth=4
 endif
@@ -40,7 +34,7 @@ endif
 command! -bar -nargs=0 Nodiff setlocal diff< scrollbind< wrap< foldmethod< foldcolumn& | norm zE
 command! -bar -nargs=0 PrintFileInfo echo strftime( '%c' ,getftime( expand( '%' ) ) ) . " " . getfsize( expand( '%' ) ) . " Bytes"
 command! -bar -nargs=0 Izon runtime macros/izon.vim
-command! -bar -nargs=0 Vime execute 'source ' . myvimfiles . '/macros/vime2.vim'
+command! -bar -nargs=0 Vime execute 'source ~/vimfiles/macros/vime2.vim'
 command! -bar -nargs=0 Rlog new | setlocal bt=nofile noswf ft=rcslog | execute '0r! rlog #' | 1
 command! -bar -nargs=? -range=% Extab let et_save=&et | setl et | <line1>,<line2>ret! <args> | let &et=et_save | unlet et_save
 
