@@ -52,7 +52,10 @@ command! -bar -nargs=0 Fold setl fdm=syntax fdc=12
 command! -bar -nargs=0 NoFold setl fdm& fdc&
 command! -bar -nargs=0 Cfold syntax region	cBlock	start="{" end="}" transparent fold | Fold
 
-command! -bar -nargs=0 Ypath let @*=expand('%')
+command! -bar -nargs=0 Ypath let @*=expand('%:p')
+if has('win32')
+    command! -bar -nargs=? -range=% Jn2a <line1>,<line2>!"C:\Program Files\java\jdk1.6.0_20\bin\native2ascii.exe" <args>
+endif
 
 "nnoremap n nzz
 "nnoremap N Nzz
